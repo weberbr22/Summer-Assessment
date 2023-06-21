@@ -16,14 +16,17 @@ namespace SummerAssessment // Note: actual namespace depends on the project name
 
     internal class OOP
     {
-        static void Start()
+        static void Main()
         {
             Employee[] employees = new Employee[8];
+
             string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            docPath = Path.Combine(docPath, "txts\\Employees.txt");
+            docPath = Path.Combine(docPath, "Academic/Computing/C#/Employees.txt");
+
             StreamReader reader = new StreamReader(docPath);
             string text = reader.ReadToEnd();
             string[] hoursData = File.ReadAllLines(text);
+
             for (int i = 0; i < hoursData.Length; i++)
             {
                 string[] data = hoursData[i].Split(',');
@@ -262,10 +265,6 @@ namespace SummerAssessment // Note: actual namespace depends on the project name
             {
                 Console.WriteLine(CircularQueue[i].ID + " " + CircularQueue[i].Quantity);
             }
-
-            // Part 3
-
-
         }
     }
 }
